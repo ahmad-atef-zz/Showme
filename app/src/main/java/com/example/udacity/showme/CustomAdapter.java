@@ -2,6 +2,7 @@ package com.example.udacity.showme;
 
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,23 +34,8 @@ public class CustomAdapter extends ArrayAdapter<Movie>{
         String posterUrl = baseUrl + singleResult.getPoster() ;
 
         final ImageView posterView = (ImageView) convertView.findViewById(R.id.grid_item_image);
-        Picasso.with(getContext()).load(posterUrl).into(posterView);
-        //final View myView = (View)convertView.findViewById(R.id.myView);
+        Picasso.with(getContext()).load(posterUrl).error(R.drawable.h2).into(posterView);
 
-
-      /*  posterView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                if(!checked){
-                    checked = true;
-                    myView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,0,1f));
-                    myView.
-                }else{
-                    checked = false;
-                    myView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,0,0f));
-                }
-            }
-        });*/
         return convertView;
     }
 }

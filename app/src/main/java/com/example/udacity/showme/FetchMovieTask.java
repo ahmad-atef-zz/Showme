@@ -18,7 +18,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class FetchMovieTask extends AsyncTask<String, Void, Void> {
-    
+
     // TODO : include your api key here
     public final String api_key = "";
 
